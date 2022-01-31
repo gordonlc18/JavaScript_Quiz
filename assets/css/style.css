@@ -69,6 +69,7 @@ h3 {
     /* align-items: flex-start; add back if I decided to add a header*/
     max-width: 80rem;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 
