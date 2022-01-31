@@ -42,6 +42,22 @@ h3 {
 }
 
 
+/* header */
+
+.title {
+    background-color: #07377b;
+    /* color: var(--text-light); */
+    font-size: 44px;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+.local-storage:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+
 /* UTILITIES*/
 
 .container {
@@ -99,6 +115,10 @@ h3 {
     background-color: white;
 }
 
+.subtitle {
+    padding: 0.5em 1em 1em;
+}
+
 .btn:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
@@ -106,7 +126,7 @@ h3 {
     transition: transform 150ms;
 }
 
-.btn[disabled]:hover {
+.btn [disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
