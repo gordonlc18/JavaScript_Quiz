@@ -33,7 +33,7 @@ let questions = [{
             answer: 1
         },
         {
-            question: "What letter is at the index of 3 in the following string? let animal = 'Dumbo Octopus'",
+            question: "What letter is at the index of 3 in the following string? \n let animal = 'Dumbo Octopus';",
             choice1: "u",
             choice2: "m",
             choice3: "D",
@@ -57,14 +57,14 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     avaliableQuestions = [...questions];
-    console.log(avaliableQuestions);
+
     getNewQuestion();
 };
 
 getNewQuestion = () => {
     if (avaliableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         // GO TO THE END PAGE
-        return window.location.assign("/end.html");
+        return window.location.assign(`/end.html`);
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * avaliableQuestions.length);
@@ -72,21 +72,33 @@ getNewQuestion = () => {
     question.innerText = currentQuestion.question;
 
     choices.forEach(choice => {
-        const number = choice.dataset['number'];
+        const number = choice.dataset["number"];
         choice.innerText = currentQuestion['choice' + number];
     });
+
     avaliableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 
 };
 choices.forEach(choice => {
-    choice.addEventListener('click', e => {
+    choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
+
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
-        console.log(selectedAnswer);
-        getNewQuestion();
+        const selectedAnswer = selectedChoice.dataset["number"];
+
+        const classToApply =
+            selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+        // incrementScore(Correct_BONUS);
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+
+        }, 1000);
     });
 });
 
