@@ -42,6 +42,39 @@ h3 {
     font-weight: 500;
 }
 
+section {
+    background-color: rgb(193, 224, 247);
+    width: 50%;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 1em 10% 0.5em;
+    border-radius: 8px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+
+/* intro */
+
+.intro {
+    text-align: left;
+}
+
+.intro p {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.intro ul {
+    list-style: circle;
+    font-size: 1.9rem;
+    margin: 1em auto;
+    list-style-position: outside;
+}
+
 
 /* header */
 
