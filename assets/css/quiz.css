@@ -1,3 +1,10 @@
+:root {
+    background-color: #f1f6fb;
+    font-size: 62.5%;
+    --text-blue: #56a5eb;
+    --box-shadow: #56b9eb80;
+}
+
 .choice-container {
     display: flex;
     margin-bottom: 0.5rem;
@@ -9,7 +16,7 @@
 
 .choice-container:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 #56b9eb80;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--box-shadow);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
 }
@@ -34,7 +41,7 @@
 }
 
 
-/* HUD */
+/* Heads Up Display */
 
 #hud {
     display: flex;

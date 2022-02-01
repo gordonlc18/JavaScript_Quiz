@@ -65,8 +65,9 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (avaliableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        // GO TO THE END PAGE
-        return window.location.assign(`/end.html`);
+        localStorage.setItem('mostRecentScore', score);
+        // GO TO THE High Score PAGE
+        return window.location.assign(`/highScore.html`);
     }
     questionCounter++;
     questionCounterText.innerText = `${questionCounter} /${MAX_QUESTIONS}` // HUD INFO 
