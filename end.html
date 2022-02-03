@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Scores</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+
+
+</head>
+
+<body>
+    <header>
+        <h1 class="title">JavaScript Code Quiz</h1>
+        <div class="subtitle">
+            <!-- <a class="btn" href="/highScore.html">High Scores</a> -->
+        </div>
+    </header>
+    <div class="container">
+        <div id="highScore" class="justify-center flex-column">
+            <h1 id="finalScore"></h1>
+            <form>
+                <input type="text" name="username" id="username" placeholder="username">
+                <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+                Save
+              </button>
+
+                <a class="btn" href="/quiz.html">Retake Quiz</a>
+                <a class="btn" href="/">Go Home</a>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/js/highScore.js "></script>
+
+</body>
+
+</html>
