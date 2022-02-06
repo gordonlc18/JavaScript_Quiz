@@ -6,7 +6,9 @@ const mostRecentScore = localStorage.getItem('mostRecentScore');
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 const MAX_HIGH_SCORES = 5;
-
+document.getElementById(saveScoreBtn).onclick = function() {
+    location.href = "/javascript-quiz/";
+}
 
 finalScore.innerText = mostRecentScore;
 
