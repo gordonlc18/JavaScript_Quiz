@@ -19,22 +19,26 @@
             <!-- <a class="btn" href="/highScore.html">High Scores</a> -->
         </div>
     </header>
-    <div class="container">
-        <div id="highScore" class="justify-center flex-column">
-            <h1 id="finalScore"></h1>
-            <form>
-                <input type="text" name="username" id="username" placeholder="username">
-                <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+
+    <body>
+        <div class="container">
+            <div id="end" class="flex-center flex-column">
+
+                <h1 id="finalScore"></h1>
+                <form>
+                    <input type="text" name="username" id="username" placeholder="username" />
+                    <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
                 Save
               </button>
-
-                <a class="btn" href="/quiz.html">Retake Quiz</a>
+                </form>
+                <a class="btn" href="./quiz.html">Play Again</a>
                 <a class="btn" href="/">Go Home</a>
-            </form>
+            </div>
         </div>
-    </div>
-    <script src="./assets/js/highScore.js "></script>
+        <script src="./assets/js/end.js"></script>
+    </body>
 
+</html>
 </body>
 
 </html>

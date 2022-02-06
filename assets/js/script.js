@@ -3,11 +3,17 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
 
+
+
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let avaliableQuestions = [];
+
+
+
 
 let questions = [{
             question: "Which of the following is NOT a logical operator?",
@@ -55,6 +61,19 @@ const CORRECT_BONUS = 20;
 const MAX_QUESTIONS = 5;
 const INCORRECT_BONUS = -10;
 
+
+var count = 90;
+var interval = setInterval(function() {
+    document.getElementById('count').innerHTML = count;
+    count--;
+    if (count === 0) {
+        clearInterval(interval);
+        document.getElementById('count').innerHTML = 'Done';
+        // or...
+        alert("You're out of time!");
+    }
+}, 1000);
+
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -66,13 +85,15 @@ startGame = () => {
 getNewQuestion = () => {
     if (avaliableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
-        // GO TO THE High Score PAGE
-        return window.location.assign(`/highScore.html`);
+        // GO TO THE END PAGE
+        return window.location.assign("./end.html");
     }
+    // HUD SECTION
     questionCounter++;
-    questionCounterText.innerText = `${questionCounter} /${MAX_QUESTIONS}` // HUD INFO 
+    questionCounterText.innerText = `${questionCounter} /${MAX_QUESTIONS}`;
 
     const questionIndex = Math.floor(Math.random() * avaliableQuestions.length);
+
     currentQuestion = avaliableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
